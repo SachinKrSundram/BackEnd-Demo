@@ -9,8 +9,9 @@ const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
 const MongoStore = require('connect-mongo');
+const bodyParser = require('body-parser');
 
-app.use(express.urlencoded());
+app.use(bodyParser.urlencoded({extended:true}));
 
 app.use(cookieParser());
 

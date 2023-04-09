@@ -1,6 +1,4 @@
-const { default: mongoose } = require("mongoose");
-
-const mongoose = reuire('mongoose');
+const mongoose = require('mongoose');
 
 
 const postSchema = new mongoose.Schema({
@@ -9,7 +7,7 @@ const postSchema = new mongoose.Schema({
         required: true
     },
     user: {
-        types: mongoose.Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     }
     },{
