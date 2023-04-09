@@ -23,7 +23,6 @@ app.set('layout extractScripts', true);
 
 
 // use express router
-app.use('/', require('./routes'));
 
 // set up the view engine
 app.set('view engine', 'ejs');
@@ -43,7 +42,9 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(passport.setAuthenticationUser);
+app.use(passport.setAuthenticatedUser);
+
+app.use('/', require('./routes'));
 
 
 
